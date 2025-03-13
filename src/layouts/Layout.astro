@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Tech, Sci-Fi & Astrophotography Blog" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="stylesheet" href="/styles/tech.css" />
+  </head>
+  <body>
+    <div class="tech-background">
+      <div class="matrix-effect"></div>
+      <div class="stars"></div>
+      <div class="twinkling"></div>
+    </div>
+    <main>
+      <slot />
+    </main>
+    <script is:inline src="/scripts/tech-animations.js"></script>
+  </body>
+</html>

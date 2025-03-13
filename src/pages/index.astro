@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Tech & Space Explorer">
+  <main class="content-wrapper">
+    <h1 class="hologram-text">Exploring the <span class="tech-gradient">Tech Universe</span></h1>
+    <p class="tagline">
+      Dive into the world of cutting-edge technology, classic sci-fi, and the wonders of astrophotography
+    </p>
+    
+    <section class="blog-grid">
+      <Card
+        href="/blog/tech"
+        title="Tech Insights"
+        body="Latest in technology and innovation"
+      />
+      <Card
+        href="/blog/sci-fi"
+        title="Sci-Fi Chronicles"
+        body="Exploring classic sci-fi movies"
+      />
+      <Card
+        href="/gallery"
+        title="Astrophotography"
+        body="Capturing the cosmos"
+      />
+      <Card
+        href="/about"
+        title="About Me"
+        body="My journey through tech and space"
+      />
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .content-wrapper {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    margin: 2rem auto;
+    max-width: 1200px;
+  }
+
+  .hologram-text {
+    font-size: 4rem;
+    text-align: center;
+    animation: hologram 3s ease-in-out infinite alternate;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.8);
+  }
+
+  .tech-gradient {
+    background: linear-gradient(
+      45deg,
+      #00ff41,
+      #00bfff,
+      #ff00ff
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .tagline {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    color: #00ff41;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  @keyframes hologram {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+  }
+</style>
